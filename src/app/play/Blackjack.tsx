@@ -1,8 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Hand } from './Hand';
-import { calculateHandValue, createDeck, shuffleDeck } from './utils';
 import { useBlackjack } from './useBlackjack';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';

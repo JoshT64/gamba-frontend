@@ -24,7 +24,7 @@ export const useBlackjack = () => {
   const faceUpCardValue =
     dealerHand.length > 0
       ? Math.min(
-          10,
+          11,
           parseInt(dealerHand[0].rank) || (dealerHand[0].rank === 'A' ? 11 : 10)
         )
       : 0;
@@ -33,10 +33,9 @@ export const useBlackjack = () => {
 
   useEffect(() => {
     setPlayerTotal(calculateHandValue(playerHand));
-    // Calculate the value of the dealer's face-up card (assuming it's the first card)
 
     setDealerTotal(calculateHandValue(dealerHand));
-  }, [playerHand, dealerHand, showDealerHand, faceUpCardValue]);
+  }, [playerHand, dealerHand, showDealerHand]);
 
   const dealCards = () => {
     const newDeck = shuffleDeck(createDeck());
