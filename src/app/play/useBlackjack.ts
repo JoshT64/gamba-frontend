@@ -2,9 +2,19 @@ import { useEffect, useState } from 'react';
 import { calculateHandValue, createDeck, shuffleDeck } from './utils';
 import { CardType } from './Blackjack';
 
+type GameStatus =
+  | 'Click deal to start game!'
+  | 'Player busts!'
+  | 'Player wins!'
+  | 'Push!'
+  | 'Dealer wins!'
+  | '';
+
 export const useBlackjack = () => {
   const [deck, setDeck] = useState<CardType[]>([]);
-  const [gameStatus, setGameStatus] = useState('live');
+  const [gameStatus, setGameStatus] = useState<GameStatus>(
+    'Click deal to start game!'
+  );
   const [playerHand, setPlayerHand] = useState<CardType[]>([]);
   const [dealerHand, setDealerHand] = useState<CardType[]>([]);
   const [playerTotal, setPlayerTotal] = useState(0);

@@ -19,7 +19,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <main
           id='skip'
-          className='min-h-screen flex flex-col md:min-h[calc(100dvh-5rem)]'
+          className='min-h-screen flex flex-col justify-center md:min-h[calc(100dvh-5rem)]'
         >
           {children}
         </main>
